@@ -3,7 +3,7 @@ name: Rust CD
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "*.*.*"
 
 jobs:
   publish-binary:
@@ -115,7 +115,7 @@ jobs:
           override: true
       - uses: actions-rs/cargo@v1
         with:
-          command: package --allow-dirty
+          command: package
       - uses: actions-rs/cargo@v1
         with:
           command: publish
